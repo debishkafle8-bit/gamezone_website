@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameZone - Mini Games</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#070b18;color:#fff;line-height:1.5}
+nav{position:fixed;top:0;width:100%;z-index:99;padding:16px 6%;display:flex;justify-content:space-between;align-items:center;background:rgba(7,11,24,.88);backdrop-filter:blur(12px);border-bottom:1px solid #26304d}
+.logo{font-size:28px;font-weight:900;color:#57d9ff}
+nav ul{display:flex;gap:24px;list-style:none}
+nav a{color:#ddd;text-decoration:none;font-weight:bold}
+nav a:hover{color:#57d9ff}
+.hero{min-height:100vh;padding:150px 7% 80px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(7,11,24,.98) 20%,rgba(7,11,24,.5)),url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{max-width:760px}
+.badge{display:inline-block;background:#15263d;border:1px solid #2d9bc4;padding:8px 15px;border-radius:30px;color:#70e2ff;margin-bottom:20px}
+h1{font-size:clamp(48px,8vw,92px);line-height:.95;margin-bottom:25px}
+h1 span{color:#57d9ff}
+.hero p{font-size:20px;color:#c4cad8;margin-bottom:32px}
+.btn{display:inline-block;padding:14px 24px;border-radius:12px;background:#57d9ff;color:#06101b;text-decoration:none;font-weight:900;border:0;cursor:pointer}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+section{padding:90px 7%}
+.title{text-align:center;margin-bottom:45px}
+.title h2{font-size:45px}
+.title p{color:#9da7bb}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.card{background:#10172a;border:1px solid #273250;border-radius:18px;overflow:hidden;transition:.25s}
+.card:hover{transform:translateY(-8px);border-color:#57d9ff}
+.card img{width:100%;height:170px;object-fit:cover}
+.card-body{padding:22px}
+.card h3{font-size:23px;margin-bottom:8px}
+.card p{color:#aeb7c9;margin-bottom:18px}
+.play{padding:10px 17px;background:#1c2c49;color:#fff;border:1px solid #355078;border-radius:9px;cursor:pointer}
+.play:hover{background:#57d9ff;color:#07111b}
+.game-area{max-width:900px;margin:35px auto 0;background:#0e1527;border:1px solid #273250;border-radius:20px;padding:30px;text-align:center}
+.game-area h3{font-size:28px;margin-bottom:12px;color:#57d9ff}
+.output{font-size:21px;min-height:45px;margin:18px;color:#dce5f5}
+.choice-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.choice{padding:14px 20px;border-radius:12px;border:1px solid #385176;background:#17223a;color:white;cursor:pointer;font-size:18px}
+.choice:hover{background:#263c62}
+input{padding:13px;border-radius:10px;border:1px solid #425273;background:#0a1020;color:white;font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:800px;margin:0 auto}
+.stat{background:#10172a;padding:25px;border-radius:16px;text-align:center;border:1px solid #273250}
+.stat strong{display:block;font-size:35px;color:#57d9ff}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about img{width:100%;border-radius:20px;border:1px solid #2b3754}
+.about p{color:#b5bed0;font-size:18px}
+footer{text-align:center;padding:35px;background:#040711;color:#7e899e}
+@media(max-width:700px){nav ul{display:none}.about{grid-template-columns:1fr}.stats{grid-template-columns:1fr}section{padding:70px 5%}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">🎮 Debish's GameZone</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#games">Games</a></li>
+    <li><a href="#arcade">Arcade</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="badge">🔥 PLAY • COMPETE • HAVE FUN</div>
+    <h1>WELCOME TO <span>DEBISH'S GAMEZONE</span></h1>
+    <p>A big collection of simple browser games. No download. Just choose a game and play.</p>
+    <a class="btn" href="#games">EXPLORE GAMES →</a>
+  </div>
+</section>
+
+<section id="games">
+  <div class="title">
+    <h2>🎮 Featured Games</h2>
+    <p>Pick your challenge and start playing.</p>
+  </div>
+  <div class="games">
+    <div class="card"><img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=900&q=80"><div class="card-body"><h3>⚡ Reaction Test</h3><p>Test how fast you can react.</p><a href="#arcade" class="play">Play Now</a></div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?auto=format&fit=crop&w=900&q=80"><div class="card-body"><h3>✊ Rock Paper Scissors</h3><p>Challenge the computer.</p><a href="#arcade" class="play">Play Now</a></div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&w=900&q=80"><div class="card-body"><h3>❌ Tic-Tac-Toe</h3><p>Classic X and O strategy.</p><a href="#arcade" class="play">Play Now</a></div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80"><div class="card-body"><h3>🔢 Guess The Number</h3><p>Can you find the hidden number?</p><a href="#arcade" class="play">Play Now</a></div></div>
+  </div>
+</section>
+
+<section id="arcade">
+  <div class="title"><h2>🕹️ Mini Arcade</h2><p>Play directly on this website.</p></div>
+
+  <div class="game-area">
+    <h3>✊ Rock Paper Scissors</h3>
+    <div class="choice-row">
+      <button class="choice" onclick="rps('Rock')">✊ Rock</button>
+      <button class="choice" onclick="rps('Paper')">✋ Paper</button>
+      <button class="choice" onclick="rps('Scissors')">✌️ Scissors</button>
+    </div>
+    <div class="output" id="rpsOut">Choose your move!</div>
+  </div>
+
+  <div class="game-area">
+    <h3>🔢 Guess The Number</h3>
+    <p>I'm thinking of a number from 1 to 100.</p>
+    <br>
+    <input id="guess" type="number" min="1" max="100" placeholder="Your guess">
+    <button class="btn" onclick="guessNumber()">Guess</button>
+    <div class="output" id="guessOut">Good luck!</div>
+  </div>
+
+  <div class="game-area">
+    <h3>⚡ Reaction Test</h3>
+    <p>Press START, wait for the box to turn green, then click it!</p>
+    <br>
+    <button class="btn" id="reactionBtn" onclick="reactionStart()">START</button>
+    <div class="output" id="reactionOut">Your result will appear here.</div>
+  </div>
+</section>
+
+<section>
+  <div class="title"><h2>🏆 GameZone Stats</h2><p>A little motivation to keep playing.</p></div>
+  <div class="stats">
+    <div class="stat"><strong>4+</strong>Games</div>
+    <div class="stat"><strong>∞</strong>Fun</div>
+    <div class="stat"><strong>0</strong>Downloads</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=85">
+    <div>
+      <h2>About GameZone</h2>
+      <br>
+      <p>GameZone is a simple browser arcade concept. Everything runs directly in your browser, so you can play without installing an app.</p>
+      <br><br>
+      <a class="btn" href="#games">BACK TO GAMES ↑</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Debish's GameZone • Made for fun 🎮</footer>
+
+<script>
+function rps(player){
+  const moves=["Rock","Paper","Scissors"];
+  const computer=moves[Math.floor(Math.random()*3)];
+  let result;
+  if(player===computer) result="Draw! 🤝";
+  else if((player==="Rock"&&computer==="Scissors")||(player==="Paper"&&computer==="Rock")||(player==="Scissors"&&computer==="Paper")) result="You win! 🏆";
+  else result="Computer wins! 🤖";
+  document.getElementById("rpsOut").innerHTML=`You: <b>${player}</b> | Computer: <b>${computer}</b><br>${result}`;
+}
+
+let secret=Math.floor(Math.random()*100)+1;
+let attempts=0;
+function guessNumber(){
+  const value=Number(document.getElementById("guess").value);
+  const out=document.getElementById("guessOut");
+  if(!value){out.textContent="Enter a number first!";return}
+  attempts++;
+  if(value===secret){out.textContent=`🎉 Correct! You got it in ${attempts} attempts.`;secret=Math.floor(Math.random()*100)+1;attempts=0}
+  else if(value<secret) out.textContent="📈 Too low! Try again.";
+  else out.textContent="📉 Too high! Try again.";
+}
+
+let reactionTimer, startTime, waiting=false;
+function reactionStart(){
+  const btn=document.getElementById("reactionBtn");
+  const out=document.getElementById("reactionOut");
+  if(waiting)return;
+  waiting=true;
+  btn.textContent="WAIT...";
+  out.textContent="Get ready...";
+  const delay=1500+Math.random()*3000;
+  reactionTimer=setTimeout(()=>{
+    startTime=performance.now();
+    btn.textContent="CLICK NOW! ⚡";
+    btn.style.background="#32e875";
+    btn.onclick=reactionClick;
+  },delay);
+}
+function reactionClick(){
+  const time=Math.round(performance.now()-startTime);
+  const btn=document.getElementById("reactionBtn");
+  document.getElementById("reactionOut").textContent=`⚡ Your reaction time: ${time} ms`;
+  btn.textContent="TRY AGAIN";
+  btn.style.background="";
+  btn.onclick=reactionStart;
+  waiting=false;
+}
+</script>
+</body>
+</html>
